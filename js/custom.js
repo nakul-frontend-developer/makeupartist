@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   var sections = $("section"),
     nav = $(".menu"),
-    nav_height = 0;
+    nav_height = 20;
 
   $(window).on("scroll", function () {
     var cur_pos = $(this).scrollTop();
