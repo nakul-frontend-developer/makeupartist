@@ -27,6 +27,7 @@ $(document).ready(function () {
 
   nav.find("a").on("click", function () {
     $("body, #nav-icon3").removeClass("open");
+    $(this).parent("li").addClass("active");
     var $el = $(this),
       id = $el.attr("href");
 
