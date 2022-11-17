@@ -41,6 +41,19 @@ button {
     transition: 0.3s;
 }
 
+p,
+li {
+    color: var(--Black);
+    font-size: 15px;
+    line-height: 24px;
+}
+
+hgroup {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
 .button-style {
     border: 0;
     box-shadow: none;
@@ -338,6 +351,12 @@ article .about-image {
     background-color: #fff;
     padding: 80px 0;
     height: 100vh;
+    background: -moz-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: -webkit-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: -o-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFECEC', endColorstr='#FFFFFF', GradientType=0);
+    background: -ms-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
 }
 
 .about-section h3 {
@@ -353,13 +372,6 @@ article .about-image {
     text-transform: uppercase;
     font-size: 30px;
     margin: 0 0 20px;
-}
-
-.about-section p,
-.about-section ul li {
-    color: var(--Black);
-    font-size: 15px;
-    line-height: 24px;
 }
 
 .about-section ul {
@@ -379,14 +391,115 @@ article .about-image {
     position: absolute;
     top: 7px;
     left: 0;
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--PrimaryColor);
+    border: 2px solid white;
+    box-shadow: 0px 0px 0 2px var(--PrimaryColor);
 }
 
 .on-mobile {
     display: none;
+}
+
+.services-section {
+    position: relative;
+    padding: 70px 0;
+}
+
+.services-section h2 {
+    color: var(--PrimaryColor);
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+.services-section .service-list {
+    margin: 60px auto 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.services-section .service-list li {
+    position: relative;
+    display: inline-block;
+}
+
+.services-section .service-list li::before,
+.services-section .service-list li::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.services-section .service-list li {
+    width: 100%;
+    height: 338px;
+    max-width: 220px;
+    margin: 1% 1% 20px;
+    color: var(--PrimaryColor);
+    box-shadow: inset 0 0 0 1px rgb(225 142 173);
+    cursor: pointer;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.services-section .service-list li .icon {
+    font-size: 90px;
+    margin: 0 0 20px;
+}
+
+.services-section .service-list li h3 {
+    color: var(--Black);
+    margin: 0 0 20px;
+}
+
+.services-section .service-list li::before,
+.services-section .service-list li::after {
+    content: "";
+    z-index: -1;
+    margin: -5%;
+    box-shadow: inset 0 0 0 2px;
+    animation: clipMe 8s linear infinite;
+}
+
+.services-section .service-list li::before {
+    animation-delay: -4s;
+}
+
+.services-section .service-list li:hover::after,
+.services-section .service-list li:hover::before {
+    background: -moz-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: -webkit-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: -o-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFECEC', endColorstr='#FFFFFF', GradientType=0);
+    background: -ms-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+    background: linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
+}
+
+@keyframes clipMe {
+
+    0%,
+    100% {
+        clip: rect(0px, 350px, 2px, 0px);
+    }
+
+    25% {
+        clip: rect(0px, 2px, 350px, 0px);
+    }
+
+    50% {
+        clip: rect(348px, 350px, 350px, 0px);
+    }
+
+    75% {
+        clip: rect(0px, 350px, 350px, 348px);
+    }
 }
 
 /************** Media Query Start Here *************/
@@ -416,6 +529,13 @@ article .about-image {
 @media (min-width:991px) {
     .left-column {
         padding-left: 60px;
+    }
+}
+
+@media (max-width:1300px) {
+    .services-section .service-list li {
+        max-width: 290px;
+        margin: 1% 2% 30px;
     }
 }
 
@@ -587,6 +707,11 @@ article .about-image {
         font-size: 13px;
     }
 
+    p,
+    li {
+        font-size: 13px;
+    }
+
     .about-section h2 {
         font-size: 26px;
         margin: 0 0 12px;
@@ -594,6 +719,10 @@ article .about-image {
 
     .about-section ul {
         margin: 0 0 0px;
+    }
+
+    .services-section {
+        padding: 50px 0;
     }
 }
 
