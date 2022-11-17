@@ -25,6 +25,14 @@ body {
     height: 100%;
 }
 
+.hideit {
+    opacity: 0
+}
+
+.visibleit {
+    opacity: 1
+}
+
 a,
 button {
     -webkit-transition: 0.3s;
@@ -287,7 +295,107 @@ main {
     margin: 20px 0;
 }
 
+article {
+    --c: #ed2b7f;
+    --s0: calc(1.25em + 6px);
+    --s1: calc(1.25em + 6px + 0.5em);
+    place-self: center;
+    position: relative;
+    width: 335px;
+    height: 456px;
+    border: solid 0 transparent;
+    border-width: 0 var(--s0) var(--s0) 0;
+    padding: 26px 0 0 26px;
+    background: #efbaba padding-box;
+    /* background: -moz-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
+    background: -webkit-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
+    background: -o-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
+    background: -ms-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
+    background: radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box; */
+}
+
+article::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: inherit;
+    border-width: 1.25em 0 0 1.25em;
+    width: 21em;
+    height: 28.5em;
+    box-shadow: inset 0 0 0 6px var(--c);
+    mix-blend-mode: plus-lighter;
+    pointer-events: none;
+    content: "";
+}
+
+article .about-image {
+    width: 100%;
+    height: 100%;
+}
+
+.about-section {
+    position: relative;
+    background-color: #fff;
+    padding: 80px 0;
+    height: 100vh;
+}
+
+.about-section h3 {
+    color: var(--PrimaryColor);
+    font-size: 32px;
+    font-weight: 600;
+    margin: 30px 0 10px;
+}
+
+.about-section h2 {
+    color: var(--Black);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+
+.about-section p,
+.about-section ul li {
+    color: var(--Black);
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.about-section ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+}
+
+.about-section ul li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.about-section ul li:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--PrimaryColor);
+}
+
+.on-mobile {
+    display: none;
+}
+
 /************** Media Query Start Here *************/
+
+@media (min-width:1199px) {
+    .about-section h2 {
+        padding-right: 130px;
+    }
+}
 
 @media (min-width:1024px) {
     .menu ul li a:hover::before {
@@ -302,6 +410,12 @@ main {
         background: -o-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%);
         background: -ms-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%);
         background: radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%);
+    }
+}
+
+@media (min-width:991px) {
+    .left-column {
+        padding-left: 60px;
     }
 }
 
@@ -351,6 +465,34 @@ main {
         font-size: 26px;
         margin: 10px 0 30px;
     }
+
+    article {
+        margin-top: 30px;
+        width: 305px;
+        height: 385px;
+    }
+
+    article::before {
+        width: 19em;
+        height: 24em;
+    }
+
+    .on-desktop {
+        display: none;
+    }
+
+    .on-mobile {
+        display: block;
+    }
+
+    .about-section h3 {
+        margin: 0 0 10px;
+    }
+
+    .about-section {
+        padding: 50px 0;
+        height: auto;
+    }
 }
 
 @media (max-width:767px) {
@@ -370,6 +512,17 @@ main {
 
     .hamburger {
         display: flex;
+    }
+
+    .fake-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 8;
+        width: 100%;
+        height: 61px;
+        background-color: var(--Black);
     }
 
     .featured-section {

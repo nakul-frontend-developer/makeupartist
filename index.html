@@ -80,7 +80,7 @@
             </div>
         </div>
     </aside>
-
+    <div class="fake-header"></div>
     <main>
         <section id="home" class="featured-section position-relative">
             <div class="fluid-container h-100 px-3">
@@ -100,11 +100,27 @@
             </div>
         </section>
 
-        <section id="about" style="background-color: #e3e3e3;height:100vh;">
+        <section id="about" class="about-section">
             <div class="container h-100">
                 <div class="row h-100">
-                    <div class="col-md-12 h-100 d-flex align-items-center justify-content-center">
-                        <h1 class="animate__animated animate__bounce">About</h1>
+                    <div class="col-lg-6 h-100 d-flex align-items-start justify-content-center flex-column left-column">
+                        <h3>About Us</h3>
+                        <h2>WE ARE READY TO TAKE CARE OF YOUR BEAUTY</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                            suffered alteration in some form, by injected humour, or randomised words which don't look
+                            even slightly believable.</p>
+                        <ul>
+                            <li>At vero eos et accusamus et iusto odio</li>
+                            <li>Established fact that a reader will be distracted</li>
+                            <li>Sed ut perspiciatis unde omnis iste natus sit</li>
+                        </ul>
+                        <button class="button-style on-desktop">Portfolio</button>
+                    </div>
+                    <div class="col-lg-6 h-100 d-flex align-items-center justify-content-center flex-column">
+                        <article>
+                            <img src="images/about-image.png" alt="" class="about-image">
+                        </article>
+                        <button class="button-style on-mobile mt-5">Portfolio</button>
                     </div>
                 </div>
             </div>
@@ -142,9 +158,13 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.8/jquery.viewportchecker.min.js"></script>
+    <script src="js/viewport-checker.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        $('article').addClass("hideit").viewportChecker({
+            classToAdd: 'visibleit animate__animated animate__fadeInUp',
+        });
+    </script>
 </body>
 
 </html>

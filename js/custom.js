@@ -4,9 +4,14 @@ $(document).ready(function () {
     $("body").toggleClass("open");
   });
 
+  var headerHeight = 0;
+  if ($(window).width() < 767) {
+    headerHeight = 61;
+  }
+
   var sections = $("section"),
     nav = $(".menu"),
-    nav_height = 20;
+    nav_height = headerHeight;
 
   $(window).on("scroll", function () {
     var cur_pos = $(this).scrollTop();
