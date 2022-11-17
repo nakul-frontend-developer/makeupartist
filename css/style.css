@@ -496,6 +496,11 @@ article .about-image {
 }
 
 @media (max-width:767px) {
+    .container {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
     .sidebar-wrapper {
         max-height: 450px;
     }
@@ -575,6 +580,20 @@ article .about-image {
         -moz-transition: 0.4s;
         -o-transition: 0.4s;
         transition: 0.4s;
+    }
+
+    .about-section p,
+    .about-section ul li {
+        font-size: 13px;
+    }
+
+    .about-section h2 {
+        font-size: 26px;
+        margin: 0 0 12px;
+    }
+
+    .about-section ul {
+        margin: 0 0 0px;
     }
 }
 
