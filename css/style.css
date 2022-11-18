@@ -617,9 +617,9 @@ article .about-image {
     display: block;
     width: 100%;
     text-align: center;
-    max-width: 600px;
+    max-width: 850px;
     position: relative;
-    padding: 0 25px;
+    padding: 0 115px;
 }
 
 .testimonial-section .reviews:before,
@@ -634,13 +634,13 @@ article .about-image {
 }
 
 .testimonial-section .reviews:before {
-    top: -40px;
-    left: -90px;
+    top: -20px;
+    left: 0;
 }
 
 .testimonial-section .reviews:after {
     bottom: -27px;
-    right: -90px;
+    right: -10px;
     background: url(../images/qoutes1.png) no-repeat;
     background-size: 80px;
 }
@@ -662,6 +662,42 @@ article .about-image {
     display: inline-block;
     margin: 20px 0 0;
 }
+
+.testimonial-section .testimonial {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-section .testimonial .slick-list {
+    width: 100% !important;
+    max-width: 790px;
+    margin: 0 auto;
+}
+
+.testimonial-section .testimonial .slick-prev:before,
+.testimonial-section .testimonial .slick-next:before {
+    font-size: 0;
+}
+
+.testimonial-section .testimonial .slick-next {
+    right: 0;
+    background: url('../images/right-slick-arrow.png') no-repeat center;
+    width: 30px;
+    height: 60px;
+    background-size: 100%;
+    opacity: 0.3;
+}
+
+.testimonial-section .testimonial .slick-prev {
+    left: 0;
+    background: url('../images/left-slick-arrow.png') no-repeat center;
+    width: 30px;
+    height: 60px;
+    background-size: 100%;
+    opacity: 0.3;
+}
+
 
 
 
@@ -950,8 +986,23 @@ article .about-image {
     }
 
     .testimonial-section p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 26px;
+    }
+
+    .testimonial-section .testimonial {
+        padding: 0 30px;
+    }
+
+    .testimonial-section .testimonial .slick-prev,
+    .testimonial-section .testimonial .slick-next {
+        height: 50px;
+        background-size: 47%;
+        top: 36%;
+    }
+
+    .testimonial-section h2 {
+        font-size: 28px;
     }
 }
 
