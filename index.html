@@ -177,6 +177,23 @@
             </div>
         </section>
 
+        <section id="testimonial" class="testimonial-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 d-flex align-items-center justify-content-center flex-column">
+                        <hgroup class="text-center">
+                            <h2>Our Happy Client</h2>
+                        </hgroup>
+                        <div class="reviews">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam neque voluptate non fuga
+                                assumenda. Eveniet sequi ipsa quaerat est expedita tempora. </p>
+                            <h6>- Shalini Gupta</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="portfolio" style="background-color: #e3e3e3;height:100vh;">
             <div class="container h-100">
                 <div class="row h-100">
@@ -187,7 +204,7 @@
             </div>
         </section>
 
-        <footer id="contactus" class="contactus-section">
+        <section id="contactus" class="contactus-section">
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-lg-4 full-cols">
@@ -252,14 +269,17 @@
 
                 </div>
             </div>
-        </footer>
+        </section>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/viewport-checker.js"></script>
     <script src="js/custom.js"></script>
     <script>
-        $('article, .services-section .service-list li').addClass("hideit").viewportChecker({
+        $('article').addClass("hideit").viewportChecker({
+            classToAdd: 'visibleit animate__animated animate__fadeInUp',
+        });
+        $('.services-section .service-list li').addClass("hideit").viewportChecker({
             classToAdd: 'visibleit animate__animated animate__fadeInUp',
         });
     </script>

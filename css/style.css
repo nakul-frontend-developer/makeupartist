@@ -320,11 +320,6 @@ article {
     border-width: 0 var(--s0) var(--s0) 0;
     padding: 26px 0 0 26px;
     background: #efbaba padding-box;
-    /* background: -moz-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
-    background: -webkit-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
-    background: -o-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
-    background: -ms-radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box;
-    background: radial-gradient(circle at 50% 50%, rgba(146, 0, 183, 1) 0%, rgba(245, 46, 121, 1) 100%) padding-box; */
 }
 
 article::before {
@@ -499,7 +494,23 @@ article .about-image {
 .contactus-section {
     padding: 70px 0;
     position: relative;
-    background-color: #000;
+    background: -moz-linear-gradient(167deg, rgba(0, 0, 0, 1) 32%, rgba(150, 32, 77, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-linear-gradient(167deg, rgba(0, 0, 0, 1) 32%, rgba(150, 32, 77, 1) 100%);
+
+    /* opera 11.10+ */
+    background: -o-linear-gradient(167deg, rgba(0, 0, 0, 1) 32%, rgba(150, 32, 77, 1) 100%);
+
+    /* ie 6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#96204D', endColorstr='#000000', GradientType=1);
+
+    /* ie 10+ */
+    background: -ms-linear-gradient(167deg, rgba(0, 0, 0, 1) 32%, rgba(150, 32, 77, 1) 100%);
+
+    /* global 94%+ browsers support */
+    background: linear-gradient(167deg, rgba(0, 0, 0, 1) 32%, rgba(150, 32, 77, 1) 100%);
+
     /* background: url('../images/service-bg.jpg') no-repeat center top /cover; */
 }
 
@@ -515,24 +526,24 @@ article .about-image {
     color: var(--white);
 }
 
-footer {
+.contactus-section {
     padding: 70px 0;
 }
 
-footer .footer-logo {
+.contactus-section .footer-logo {
     width: 100%;
     max-width: 280px;
     margin: 0 0 15px;
 }
 
-footer form label {
+.contactus-section form label {
     color: var(--PrimaryColor);
     font-size: 14px;
     font-weight: 600;
     margin: 0 0 5px;
 }
 
-footer form input {
+.contactus-section form input {
     border: 0;
     line-height: 48px;
     font-size: 13px;
@@ -544,7 +555,7 @@ footer form input {
     outline: 0;
 }
 
-footer form textarea {
+.contactus-section form textarea {
     border: 0;
     line-height: 22px;
     font-size: 13px;
@@ -557,21 +568,101 @@ footer form textarea {
     outline: 0;
 }
 
-footer form button[type="submit"] {
+.contactus-section form button[type="submit"] {
     margin: 15px 0 0;
 }
 
-footer ul li a {
+.contactus-section ul li a {
     text-decoration: none;
     color: var(--white);
     margin: 0 0 15px;
     display: inline-block;
 }
 
-footer ul li a:hover {
+.contactus-section ul li a:hover {
     color: var(--white);
     opacity: 0.8;
 }
+
+.testimonial-section {
+    position: relative;
+    padding: 70px 0;
+    background: -moz-radial-gradient(circle at 50% 50%, rgba(60, 10, 40, 1) 0%, rgba(0, 0, 0, 1) 79%);
+    background: -webkit-radial-gradient(circle at 50% 50%, rgba(60, 10, 40, 1) 0%, rgba(0, 0, 0, 1) 79%);
+    background: -o-radial-gradient(circle at 50% 50%, rgba(60, 10, 40, 1) 0%, rgba(0, 0, 0, 1) 79%);
+    background: -ms-radial-gradient(circle at 50% 50%, rgba(60, 10, 40, 1) 0%, rgba(0, 0, 0, 1) 79%);
+    background: radial-gradient(circle at 50% 50%, rgba(60, 10, 40, 1) 0%, rgba(0, 0, 0, 1) 79%);
+}
+
+.testimonial-section h2 {
+    color: var(--PrimaryColor);
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+.testimonial-section hgroup {
+    margin: 0 auto 20px;
+}
+
+.testimonial-section hgroup>p {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.testimonial-section .reviews {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    max-width: 600px;
+    position: relative;
+    padding: 0 25px;
+}
+
+.testimonial-section .reviews:before,
+.testimonial-section .reviews:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    background: url('../images/qoutes.png') no-repeat center;
+    background-size: 80px;
+}
+
+.testimonial-section .reviews:before {
+    top: -40px;
+    left: -90px;
+}
+
+.testimonial-section .reviews:after {
+    bottom: -27px;
+    right: -90px;
+    background: url(../images/qoutes1.png) no-repeat;
+    background-size: 80px;
+}
+
+.testimonial-section p {
+    font-size: 20px;
+    color: #fff;
+    margin: 0 0 15px;
+    text-align: center;
+    font-weight: 100;
+    line-height: 30px;
+    font-style: italic;
+}
+
+.testimonial-section h6 {
+    text-align: center;
+    color: var(--PrimaryColor);
+    border-bottom: 1px solid;
+    display: inline-block;
+    margin: 20px 0 0;
+}
+
 
 
 /************** Media Query Start Here *************/
@@ -622,26 +713,34 @@ footer ul li a:hover {
         background-size: 550px;
     }
 
-    footer .full-cols {
+    .contactus-section .full-cols {
         flex: initial;
         width: 100%;
     }
 
-    footer .middle-cols {
+    .contactus-section .middle-cols {
         margin: 50px 0 20px;
     }
 
-    footer ul {
+    .contactus-section ul {
         display: flex;
         justify-content: space-between;
     }
 
-    footer ul li a {
+    .contactus-section ul li a {
         margin: 0;
+    }
+
+    .testimonial-section .reviews:before,
+    .testimonial-section .reviews:after {
+        display: none;
+    }
+
+    .testimonial-section .reviews {
+        padding: 0;
     }
 }
 
-@media (max-width:1024px) {}
 
 @media (max-width:991px) {
     .featured-section {
@@ -819,7 +918,8 @@ footer ul li a:hover {
     }
 
     .services-section,
-    .contactus-section {
+    .contactus-section,
+    .testimonial-section {
         padding: 50px 0;
     }
 
@@ -847,6 +947,11 @@ footer ul li a:hover {
 
     .services-section .service-list li>i {
         margin-right: 10px;
+    }
+
+    .testimonial-section p {
+        font-size: 18px;
+        line-height: 26px;
     }
 }
 
