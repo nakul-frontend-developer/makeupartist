@@ -496,91 +496,83 @@ article .about-image {
     }
 }
 
-/* .services-section .service-list {
-    margin: 60px auto 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
+.contactus-section {
+    padding: 70px 0;
+    position: relative;
+    background-color: #000;
+    /* background: url('../images/service-bg.jpg') no-repeat center top /cover; */
 }
 
-.services-section .service-list li {
-    position: relative;
+.contactus-section h2 {
+    color: var(--PrimaryColor);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+.contactus-section p {
+    color: var(--white);
+}
+
+footer {
+    padding: 70px 0;
+}
+
+footer .footer-logo {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 0 15px;
+}
+
+footer form label {
+    color: var(--PrimaryColor);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+footer form input {
+    border: 0;
+    line-height: 48px;
+    font-size: 13px;
+    color: var(--Black);
+    border-radius: 4px;
+    padding: 0 15px;
+    margin: 0 0 15px;
+    box-shadow: none;
+    outline: 0;
+}
+
+footer form textarea {
+    border: 0;
+    line-height: 22px;
+    font-size: 13px;
+    color: var(--Black);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 0 0 15px;
+    height: 150px;
+    box-shadow: none;
+    outline: 0;
+}
+
+footer form button[type="submit"] {
+    margin: 15px 0 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: var(--white);
+    margin: 0 0 15px;
     display: inline-block;
 }
 
-.services-section .service-list li::before,
-.services-section .service-list li::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+footer ul li a:hover {
+    color: var(--white);
+    opacity: 0.8;
 }
 
-.services-section .service-list li {
-    width: 100%;
-    height: 338px;
-    max-width: 220px;
-    margin: 1% 1% 20px;
-    color: var(--PrimaryColor);
-    box-shadow: inset 0 0 0 1px rgb(225 142 173);
-    cursor: pointer;
-    padding: 10px;
-    vertical-align: top;
-}
-
-.services-section .service-list li .icon {
-    font-size: 90px;
-    margin: 0 0 20px;
-}
-
-.services-section .service-list li h3 {
-    color: var(--Black);
-    margin: 0 0 20px;
-}
-
-.services-section .service-list li::before,
-.services-section .service-list li::after {
-    content: "";
-    z-index: -1;
-    margin: -5%;
-    box-shadow: inset 0 0 0 2px;
-    animation: clipMe 8s linear infinite;
-}
-
-.services-section .service-list li::before {
-    animation-delay: -4s;
-}
-
-.services-section .service-list li:hover::after,
-.services-section .service-list li:hover::before {
-    background: -moz-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
-    background: -webkit-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
-    background: -o-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFECEC', endColorstr='#FFFFFF', GradientType=0);
-    background: -ms-linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
-    background: linear-gradient(121deg, rgba(255, 255, 255, 1) 22%, rgba(255, 236, 236, 1) 100%);
-}
-
-@keyframes clipMe {
-
-    0%,
-    100% {
-        clip: rect(0px, 350px, 2px, 0px);
-    }
-
-    25% {
-        clip: rect(0px, 2px, 350px, 0px);
-    }
-
-    50% {
-        clip: rect(348px, 350px, 350px, 0px);
-    }
-
-    75% {
-        clip: rect(0px, 350px, 350px, 348px);
-    }
-} */
 
 /************** Media Query Start Here *************/
 
@@ -607,8 +599,13 @@ article .about-image {
 }
 
 @media (min-width:991px) {
-    .left-column {
+    /* .left-column {
         padding-left: 60px;
+    } */
+
+    .container {
+        padding-left: 60px;
+        padding-right: 60px;
     }
 }
 
@@ -624,7 +621,27 @@ article .about-image {
         background-position: -70px 100%;
         background-size: 550px;
     }
+
+    footer .full-cols {
+        flex: initial;
+        width: 100%;
+    }
+
+    footer .middle-cols {
+        margin: 50px 0 20px;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer ul li a {
+        margin: 0;
+    }
 }
+
+@media (max-width:1024px) {}
 
 @media (max-width:991px) {
     .featured-section {
@@ -801,7 +818,8 @@ article .about-image {
         margin: 0 0 0px;
     }
 
-    .services-section {
+    .services-section,
+    .contactus-section {
         padding: 50px 0;
     }
 
