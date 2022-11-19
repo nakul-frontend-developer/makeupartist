@@ -1,4 +1,22 @@
 $(document).ready(function () {
+  $(document).on("click", ".portfolio-category", function () {
+    $(this).parents(".category-wrapper").find("nav").slideToggle();
+  });
+
+  $(document).on(
+    "click",
+    ".category-wrapper>nav .nav-tabs .nav-link",
+    function () {
+      $("#loader").css("opacity", "1");
+      setTimeout(() => {
+        $("#loader").css("opacity", "0");
+      }, 2000);
+      if ($(window).width() < 991) {
+        $(".category-wrapper").find("nav").slideToggle();
+      }
+    }
+  );
+
   $("#nav-icon3").click(function () {
     $(this).toggleClass("open");
     $("body").toggleClass("open");
