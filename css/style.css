@@ -460,7 +460,7 @@ article .about-image {
     vertical-align: top;
     margin: 0;
     width: 100%;
-    font-weight: 600;
+    font-weight: 300;
     align-items: flex-start;
 }
 
@@ -545,16 +545,18 @@ article .about-image {
 }
 
 .contactus-section .footer-info {
-    background-color: rgb(255 255 255 / 14%);
-    padding: 22px 35px;
+    background: #ffffff1a;
+    padding: 19px 30px;
 }
 
 .contactus-section .footer-info>p {
-    font-size: 17px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     font-weight: 400;
     margin: 7px 0;
+    white-space: pre-line;
+    word-break: break-word;
 }
 
 .contactus-section .footer-info>p i {
@@ -575,29 +577,50 @@ article .about-image {
     margin: 0 0 5px;
 }
 
-.contactus-section form input {
+.contactus-section form input,
+.contactus-section form input:focus {
     border: 0;
     line-height: 48px;
     font-size: 13px;
-    color: var(--Black);
+    color: var(--white);
     border-radius: 4px;
     padding: 0 15px;
     margin: 0 0 15px;
     box-shadow: none;
     outline: 0;
+    background: #ffffff1a;
+    border-bottom: 2px solid #FFE;
 }
 
-.contactus-section form textarea {
+.contactus-section form textarea,
+.contactus-section form textarea:focus {
     border: 0;
     line-height: 22px;
     font-size: 13px;
-    color: var(--Black);
+    color: var(--white);
     border-radius: 4px;
     padding: 15px;
     margin: 0 0 15px;
     height: 150px;
     box-shadow: none;
     outline: 0;
+    background: #ffffff1a;
+    border-bottom: 2px solid #FFE;
+}
+
+.contactus-section form input::-webkit-input-placeholder,
+.contactus-section form textarea::-webkit-input-placeholder {
+    color: var(--white);
+}
+
+.contactus-section form input:-ms-input-placeholder,
+.contactus-section form textarea::-webkit-input-placeholder {
+    color: var(--white);
+}
+
+.contactus-section form input::placeholder,
+.contactus-section form textarea::-webkit-input-placeholder {
+    color: var(--white);
 }
 
 .contactus-section form button[type="submit"] {
@@ -829,11 +852,45 @@ article .about-image {
     font-size: 25px;
 }
 
+.backtotop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgb(219 35 137 / 60%);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: ripple 3s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 .3rem rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 4rem rgba(255, 255, 255, 0);
+    }
+}
+
+.backtotop i {
+    color: var(--white);
+    font-size: 30px;
+}
+
 /************** Media Query Start Here *************/
 
 @media (min-width:1199px) {
     .about-section h2 {
         padding-right: 130px;
+    }
+
+    .middle-cols {
+        padding: 0 40px;
     }
 }
 
