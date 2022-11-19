@@ -20,11 +20,6 @@ body {
     overflow-x: hidden;
 }
 
-html,
-body {
-    height: 100%;
-}
-
 .hideit {
     opacity: 0
 }
