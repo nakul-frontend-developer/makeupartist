@@ -125,7 +125,7 @@ aside {
     display: none;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--BorderColor);
+    border-right: 1px solid var(--BorderColor);
     right: -61px;
     top: 0;
     position: absolute;
@@ -151,8 +151,8 @@ aside {
 }
 
 #nav-icon3 {
-    width: 34px;
-    height: 32px;
+    width: 29px;
+    height: 26px;
     position: relative;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -168,7 +168,7 @@ aside {
 #nav-icon3 span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
     background: var(--PrimaryColor);
     border-radius: 9px;
@@ -190,11 +190,11 @@ aside {
 
 #nav-icon3 span:nth-child(2),
 #nav-icon3 span:nth-child(3) {
-    top: 13px;
+    top: 11px;
 }
 
 #nav-icon3 span:nth-child(4) {
-    top: 26px;
+    top: 22px;
 }
 
 #nav-icon3.open span:nth-child(1) {
@@ -582,14 +582,14 @@ article .about-image {
     border: 0;
     line-height: 48px;
     font-size: 13px;
-    color: var(--white);
+    color: var(--Black);
     border-radius: 4px;
     padding: 0 15px;
     margin: 0 0 15px;
     box-shadow: none;
     outline: 0;
-    background: #ffffff1a;
-    border-bottom: 2px solid #FFE;
+    background: var(--white);
+    border-bottom: 2px solid var(--PrimaryColor);
 }
 
 .contactus-section form textarea,
@@ -597,30 +597,30 @@ article .about-image {
     border: 0;
     line-height: 22px;
     font-size: 13px;
-    color: var(--white);
+    color: var(--Black);
     border-radius: 4px;
     padding: 15px;
     margin: 0 0 15px;
     height: 150px;
     box-shadow: none;
     outline: 0;
-    background: #ffffff1a;
-    border-bottom: 2px solid #FFE;
+    background: var(--white);
+    border-bottom: 2px solid var(--PrimaryColor);
 }
 
 .contactus-section form input::-webkit-input-placeholder,
 .contactus-section form textarea::-webkit-input-placeholder {
-    color: var(--white);
+    color: var(--Black);
 }
 
 .contactus-section form input:-ms-input-placeholder,
 .contactus-section form textarea::-webkit-input-placeholder {
-    color: var(--white);
+    color: var(--Black);
 }
 
 .contactus-section form input::placeholder,
 .contactus-section form textarea::-webkit-input-placeholder {
-    color: var(--white);
+    color: var(--Black);
 }
 
 .contactus-section form button[type="submit"] {
@@ -852,35 +852,21 @@ article .about-image {
     font-size: 25px;
 }
 
-.backtotop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: rgb(219 35 137 / 60%);
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contactus-btn {
+
     animation: ripple 3s linear infinite;
 }
 
 @keyframes ripple {
     0% {
-        box-shadow: 0 0 0 .3rem rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 0 .1rem rgba(255, 255, 255, 0.2);
     }
 
     100% {
-        box-shadow: 0 0 0 4rem rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0);
     }
 }
 
-.backtotop i {
-    color: var(--white);
-    font-size: 30px;
-}
 
 /************** Media Query Start Here *************/
 
@@ -1151,6 +1137,17 @@ article .about-image {
         overflow: hidden;
     }
 
+    body.open:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0 0 0 / 80%);
+        z-index: 9;
+    }
+
     .about-section p,
     .about-section ul li {
         font-size: 13px;
@@ -1245,6 +1242,10 @@ article .about-image {
     .portfolio-section .portfolios .slick-next {
         right: 18px;
         background-size: 13px;
+    }
+
+    .menu ul li a {
+        font-size: 13px;
     }
 }
 
