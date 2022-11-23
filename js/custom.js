@@ -5,6 +5,18 @@ $(document).ready(function () {
 
   $(document).on(
     "click",
+    ".portfolio-section .nav-tabs .nav-link",
+    function () {
+      let currentVal = $(this).text();
+      $(this)
+        .parents(".category-wrapper")
+        .find(".categoryname")
+        .text(currentVal);
+    }
+  );
+
+  $(document).on(
+    "click",
     ".category-wrapper>nav .nav-tabs .nav-link",
     function () {
       $("#loader").css("opacity", "1");

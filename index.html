@@ -218,7 +218,7 @@
                         </hgroup>
                         <div class="position-relative category-wrapper">
                             <div class="portfolio-category  align-items-center justify-content-between">
-                                <h5>Select Category</h5>
+                                <h5 class="categoryname">Select Category</h5>
                                 <i class="fa-solid fa-bars"></i>
                             </div>
                             <nav class="">
@@ -438,12 +438,15 @@
                 let name = document.getElementById('fullname').value = "";
                 let email = document.getElementById('email').value = "";
                 let query = document.getElementById('query').value = "";
+                $('html, body').animate({
+                    scrollTop: $("#contactus").offset().top - 50
+                }, 200, function () { $("#contactus").focus(); });
             }
             let userData = { 'name': name, 'email': email, 'query': query }
             document.getElementById('username').innerText = name;
             let alertMessage = document.getElementById('alert-message');
             alertMessage.style.display = "block";
-            submitbtn.setAttribute('disabled', 'disabled')
+            submitbtn.setAttribute('disabled', 'disabled');
         })
 
     </script>
