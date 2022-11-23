@@ -293,19 +293,26 @@
                         <h2>Contact Us</h2>
                         <p>Email us with any question or inquiries or call +91 9911934876. We would be happy to answer
                             your questioins and query.</p>
+                        <div class="alert alert-success " role="alert" id="alert-message">
+                            <h6>Thanks for connect with us</h6>
+                            Hey <span id="username"></span>, Unfortunately the email server is down for a bit of
+                            maintenance right now. But soon
+                            we’ll be up and the will shine again. :)
+                        </div>
                         <form class="mt-4" method="post">
+                            <span id="error">All fields are required.</span>
                             <div class="form-group">
-                                <label for="fullname">Full Name</label>
+                                <label for="fullname">Full Name *</label>
                                 <input type="text" class="form-control" id="fullname" name="fullname"
                                     placeholder="Enter Full Name">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email address</label>
+                                <label for="email">Email address *</label>
                                 <input type="email" class="form-control" id="email" name="email"
                                     aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <div class="form-group">
-                                <label for="query">Description</label>
+                                <label for="query">Description *</label>
                                 <textarea type="text" class="form-control" id="query" name="query"
                                     aria-describedby="emailHelp" placeholder="Type your query here..."></textarea>
                             </div>
@@ -416,10 +423,27 @@
             classToAdd: 'visibleit animate__animated animate__fadeInUp',
         });
 
-        var submitbtn = document.getElementById('submitbtn');
+        let submitbtn = document.getElementById('submitbtn');
         submitbtn.addEventListener('click', function (e) {
             e.preventDefault();
-
+            let name = document.getElementById('fullname').value;
+            let email = document.getElementById('email').value;
+            let query = document.getElementById('query').value;
+            if (name.length == 0 || email.length == 0 || query.length == 0) {
+                let error = document.getElementById('error');
+                error.style.display = "block";
+                return
+            } else {
+                error.style.display = "none";
+                let name = document.getElementById('fullname').value = "";
+                let email = document.getElementById('email').value = "";
+                let query = document.getElementById('query').value = "";
+            }
+            let userData = { 'name': name, 'email': email, 'query': query }
+            document.getElementById('username').innerText = name;
+            let alertMessage = document.getElementById('alert-message');
+            alertMessage.style.display = "block";
+            submitbtn.setAttribute('disabled', 'disabled')
         })
 
     </script>
