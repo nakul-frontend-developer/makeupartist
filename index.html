@@ -21,7 +21,22 @@
 </head>
 
 <body>
-
+    <!-- Quantity should be the same in Sass-->
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
     <aside>
         <div class="hamburger">
             <div id="nav-icon3">
@@ -216,7 +231,16 @@
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                                 has been the industry's</p>
                         </hgroup>
-                        <div class="position-relative category-wrapper">
+                        <div class="portfolios">
+                            <div class="makeup"><img src="images/service-content-image.jpg" alt=""></div>
+                            <div class="makeup"><img src="images/service-content-image2.jpg" alt=""></div>
+                            <div class="makeup"><img src="images/service-content-image3.jpg" alt=""></div>
+                        </div>
+                        <div class="text-center mt-5">
+                            <a href="portfolios.html" class="button-style contactus-btn">View All
+                                Portfolios</a>
+                        </div>
+                        <!-- <div class="position-relative category-wrapper">
                             <div class="portfolio-category  align-items-center justify-content-between">
                                 <h5 class="categoryname">Select Category</h5>
                                 <i class="fa-solid fa-bars"></i>
@@ -280,7 +304,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -375,8 +399,9 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
+
         $(document).ready(function () {
-            $(".testimonial").slick({
+            $(".testimonial").not('.slick-initialized').slick({
                 slidesToShow: 1,
                 infinite: true,
                 slidesToScroll: 1,
@@ -387,7 +412,7 @@
                 pauseOnHover: false
             });
 
-            $(".portfolios").slick({
+            $(".portfolios").not('.slick-initialized').slick({
                 slidesToShow: 3,
                 infinite: true,
                 slidesToScroll: 1,

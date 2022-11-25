@@ -22,7 +22,7 @@ $(document).ready(function () {
       $("#loader").css("opacity", "1");
       setTimeout(() => {
         $("#loader").css("opacity", "0");
-      }, 2000);
+      }, 3000);
       if ($(window).width() < 991) {
         $(".category-wrapper").find("nav").slideToggle();
       }
