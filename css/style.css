@@ -322,9 +322,9 @@ main {
 }
 
 .featured-section {
-    background: var(--Black) url('../images/featuredImage.png') no-repeat;
+    background: var(--Black) url('../images/featuredImage2.png') no-repeat;
     height: 100vh;
-    background-position: left bottom;
+    background-position: -50px -50%;
 }
 
 .featured-section .featured-image {
@@ -1161,7 +1161,32 @@ article .about-image {
     }
 
     .featured-section {
-        padding: 77px 0 40px;
+        height: 100vh;
+        padding: 77px 0 0;
+        background: var(--Black) url(../images/featuredImage2.png) no-repeat;
+        background-position: center bottom;
+        background-size: 360px;
+    }
+
+    .featured-section .left-col {
+        display: none !important;
+    }
+
+    .featured-section .col-md-6 {
+        justify-content: flex-end !important;
+        padding: 0 !important;
+    }
+
+    .featured-section .featured-content {
+        padding: 20px;
+        margin-left: -15px;
+        margin-right: -15px;
+        background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 9%, rgba(0, 0, 0, 1) 77%);
+        background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0) 9%, rgba(0, 0, 0, 1) 77%);
+        background: -o-linear-gradient(180deg, rgba(255, 255, 255, 0) 9%, rgba(0, 0, 0, 1) 77%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#FFFFFF', GradientType=1);
+        background: -ms-linear-gradient(180deg, rgba(255, 255, 255, 0) 9%, rgba(0, 0, 0, 1) 77%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 9%, rgba(0, 0, 0, 1) 77%);
     }
 
     aside {
@@ -1329,7 +1354,7 @@ article .about-image {
 
     .featured-section .featured-image {
         margin: 0 auto 20px;
-        max-width: 275px;
+        max-width: 235px;
     }
 
     .featured-section .featured-content h1 {
