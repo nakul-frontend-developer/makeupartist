@@ -1164,8 +1164,8 @@ article .about-image {
         height: 100vh;
         padding: 77px 0 0;
         background: var(--Black) url(../images/featuredImage2.png) no-repeat;
-        background-position: center 10px;
-        background-size: contain;
+        background-position: center 0;
+        background-size: cover;
     }
 
     .featured-section .left-col {
