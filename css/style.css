@@ -1161,11 +1161,11 @@ article .about-image {
     }
 
     .featured-section {
-        height: 500px;
+        height: 100vh;
         padding: 77px 0 0;
         background: var(--Black) url(../images/featuredImage2.png) no-repeat;
-        background-position: center bottom;
-        background-size: 363px;
+        background-position: center 10px;
+        background-size: contain;
     }
 
     .featured-section .left-col {
